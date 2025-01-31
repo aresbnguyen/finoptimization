@@ -120,9 +120,3 @@ for i = 1:size(results, 1)
     fprintf('%-15d %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f\n', results(i, :));
 end
 
-
-% ssm_reference =  NaN(num_elements, 1);
-% % flight condition for reference
-% ref_mach = 0.3; 
-% ref_aoa = deg2rad(5);
-% ref_fcond = otis.flight_condition(ref_mach, ref_aoa);
