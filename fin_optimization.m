@@ -11,7 +11,7 @@ if ~isfile(otis_path)
 end
 
 otis = openrocket(otis_path);
-sim = otis.sims("20MPH-SA-36C");
+sim = otis.sims("15MPH-SA-45DEG-36C");
  
 fins = otis.component(class = "FinSet"); 
 if ~isscalar(fins)
