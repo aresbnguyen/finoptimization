@@ -1,5 +1,5 @@
 %% FIN OPTIMIZATION 
-% Created by Ares Bustinza-Nguyen (Updated: 1/26/25)
+% Created by Ares Bustinza-Nguyen (Created: 1/26/25)
 
 clear; close all;
 
@@ -95,7 +95,7 @@ for i = 1:num_elements
     
 
     % overarching check for acceptable geometry
-    % obviously this number is not correct, but i wanted to see if something would show up
+    % change numbers in future as rocket changes
     if (FINAL_FOS > 1.5) && (3019 < apogee) && (apogee < 3300) && (1 < stb_launchrod) && (stb_launchrod < 3) && (1 < stb_burnout) && (stb_burnout < 3.5)
         FOS_accept = FINAL_FOS;
         APG_accept = apogee;
@@ -110,12 +110,10 @@ end
 
 %% RESULTS ----------------------------------------------------------------
 
-results = results(~any(isnan(results), 2), :); % will have to change this for APG and STB
+results = results(~any(isnan(results), 2), :); 
 titles = {'# Iteration', 'FOS', 'Apogee', 'S-Launchrod', 'S-Burnout', 't', 'h', 'Ls', 'Lt', 'Lr'};
 
 fprintf('%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s\n', titles{:});
-
-% Loop through each row of results and print 10 integer values per row
 for i = 1:size(results, 1)
     fprintf('%-15d %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f %-15.4f\n', results(i, :));
 end
